@@ -14,17 +14,17 @@ OpenClacky autonomously completes development tasks in non-interactive terminals
 
 ### Start a new task
 ```bash
-openclacky agent --mode=auto_approve --path [repo dir] -m "[task description]"
+openclacky agent --path [repo dir] -m "[task description]"
 ```
 
 ### Continue the last session
 ```bash
-openclacky agent --mode=auto_approve --path [repo dir] -c -m "[follow-up instruction]"
+openclacky agent --path [repo dir] -c -m "[follow-up instruction]"
 ```
 
 ### Attach an image (UI mockup / bug screenshot)
 ```bash
-openclacky agent --mode=auto_approve --path [repo dir] -m "[description]" -i /path/to/screenshot.png
+openclacky agent --path [repo dir] -m "[description]" -i /path/to/screenshot.png
 ```
 
 ---
@@ -33,12 +33,12 @@ openclacky agent --mode=auto_approve --path [repo dir] -m "[description]" -i /pa
 
 ### Fix a bug
 ```bash
-openclacky agent --mode=auto_approve --path /projects/myapp -c \
+openclacky agent --path /projects/myapp -c \
   -m "After login the redirect fails with 404. Investigate and fix it."
 ```
 
 ### Build a full-stack app
 ```bash
-openclacky agent --mode=auto_approve --path /projects/myapp \
+openclacky agent --path /projects/myapp \
   -m "Build a task management app with Next.js, Tailwind CSS, and PostgreSQL. Include user login, task list with CRUD, and tag-based filtering. Set up the database schema, API routes, and frontend pages."
 ```

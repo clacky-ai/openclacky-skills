@@ -25,30 +25,30 @@ code-skills/
 
 **开始新任务：**
 ```bash
-openclacky agent --mode=auto_approve --path [repo dir] -m "[任务描述]"
+openclacky agent --path [repo dir] -m "[任务描述]"
 ```
 
 **继续上次会话：**
 ```bash
-openclacky agent --mode=auto_approve --path [repo dir] -c -m "[后续指令]"
+openclacky agent --path [repo dir] -c -m "[后续指令]"
 ```
 
 **附加图片（UI 设计稿 / Bug 截图）：**
 ```bash
-openclacky agent --mode=auto_approve --path [repo dir] -m "[描述]" -i /path/to/screenshot.png
+openclacky agent --path [repo dir] -m "[描述]" -i /path/to/screenshot.png
 ```
 
 ## 示例
 
 ### 修复 Bug
 ```bash
-openclacky agent --mode=auto_approve --path /projects/myapp -c \
+openclacky agent --path /projects/myapp -c \
   -m "登录后跳转失败，报 404 错误，请排查并修复。"
 ```
 
 ### 构建全栈应用
 ```bash
-openclacky agent --mode=auto_approve --path /projects/myapp \
+openclacky agent --path /projects/myapp \
   -m "用 Next.js、Tailwind CSS 和 PostgreSQL 构建任务管理应用，包含用户登录、任务列表 CRUD 和标签筛选，完成数据库 Schema、API 路由和前端页面。"
 ```
 
