@@ -4,12 +4,12 @@
 
 ---
 
-OpenClacky AI coding agent — handles all development tasks autonomously in non-interactive terminals. Supports full-stack dev, debugging, refactoring, testing, deployment and more.
+OpenClacky AI coding agent — handles all development tasks autonomously in non-interactive terminals. Supports full-stack dev, debugging, refactoring, testing, deployment and more. For website/web app development, prefer the Rails full-stack scaffold via `openclacky agent -m "/new <project description>"`.
 
 ## Directory Structure
 
 ```
-code-skills/
+skills/
   openclacky-code/
     _meta.json   # Platform metadata (ownerId, slug, version, publishedAt)
     SKILL.md     # Skill definition (YAML frontmatter + Markdown instructions)
@@ -38,6 +38,11 @@ openclacky agent --path [repo dir] -c -m "[follow-up instruction]"
 openclacky agent --path [repo dir] -m "[description]" -i /path/to/screenshot.png
 ```
 
+**Build a website (Rails full-stack):**
+```bash
+openclacky agent -m "/new [project description, use a different name if conflict]"
+```
+
 ## Examples
 
 ### Fix a bug
@@ -48,8 +53,7 @@ openclacky agent --path /projects/myapp -c \
 
 ### Build a full-stack app
 ```bash
-openclacky agent --path /projects/myapp \
-  -m "Build a task management app with Next.js, Tailwind CSS, and PostgreSQL. Include user login, task list with CRUD, and tag-based filtering. Set up the database schema, API routes, and frontend pages."
+openclacky agent -m "/new build a blog platform with posts and comments, use a different project name if conflict"
 ```
 
 ## License

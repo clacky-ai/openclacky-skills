@@ -4,12 +4,12 @@
 
 ---
 
-OpenClacky AI 编程 Agent — 在非交互式终端中自主完成所有开发任务，支持全栈开发、调试、重构、测试、部署等。
+OpenClacky AI 编程 Agent — 在非交互式终端中自主完成所有开发任务，支持全栈开发、调试、重构、测试、部署等。开发网站/Web 应用时，推荐使用 Rails 全栈脚手架：`openclacky agent -m "/new <项目描述>"`。
 
 ## 目录结构
 
 ```
-code-skills/
+skills/
   openclacky-code/
     _meta.json   # 平台元数据（ownerId、slug、version、publishedAt）
     SKILL.md     # 技能定义（YAML frontmatter + Markdown 指令）
@@ -38,6 +38,11 @@ openclacky agent --path [repo dir] -c -m "[后续指令]"
 openclacky agent --path [repo dir] -m "[描述]" -i /path/to/screenshot.png
 ```
 
+**构建网站（Rails 全栈）：**
+```bash
+openclacky agent -m "/new [项目描述，如有冲突请使用不同的项目名]"
+```
+
 ## 示例
 
 ### 修复 Bug
@@ -48,8 +53,7 @@ openclacky agent --path /projects/myapp -c \
 
 ### 构建全栈应用
 ```bash
-openclacky agent --path /projects/myapp \
-  -m "用 Next.js、Tailwind CSS 和 PostgreSQL 构建任务管理应用，包含用户登录、任务列表 CRUD 和标签筛选，完成数据库 Schema、API 路由和前端页面。"
+openclacky agent -m "/new build a blog platform with posts and comments, use a different project name if conflict"
 ```
 
 ## License
