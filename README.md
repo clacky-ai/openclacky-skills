@@ -6,7 +6,7 @@
 
 ## English
 
-A Clacky AI skills repository containing the `openclacky-code` skill, which delegates coding tasks to the `openclacky` CLI tool.
+OpenClacky AI coding agent — handles all development tasks autonomously in non-interactive terminals. Supports full-stack dev, debugging, refactoring, testing, deployment and more.
 
 ### Directory Structure
 
@@ -25,51 +25,40 @@ code-skills/
 
 #### Usage
 
-**Plan:**
+**Start a new task:**
 ```bash
-openclacky agent -m "Build a snake game"
+openclacky agent --mode=auto_approve --path [repo dir] -m "[task description]"
 ```
 
-**Build (new session):**
-```bash
-openclacky agent --mode=auto_approve --path [repo dir] -m "/new"
-```
-
-**Build (continue session):**
+**Continue the last session:**
 ```bash
 openclacky agent --mode=auto_approve --path [repo dir] -c -m "[follow-up instruction]"
 ```
 
-**Interactive (manual confirmation):**
+**Attach an image (UI mockup / bug screenshot):**
 ```bash
-openclacky agent --mode=confirm_safes --path [repo dir]
+openclacky agent --mode=auto_approve --path [repo dir] -m "[description]" -i /path/to/screenshot.png
 ```
 
 ### Examples
 
-#### Build a Game
+#### Fix a bug
 ```bash
-openclacky agent --mode=plan_only --path /projects/snake-game -m "Build a Snake game with HTML5 Canvas, arrow key controls, score display, and game over screen."
-openclacky agent --mode=auto_approve --path /projects/snake-game -m "Plan approved. Implement it."
+openclacky agent --mode=auto_approve --path /projects/myapp -c \
+  -m "After login the redirect fails with 404. Investigate and fix it."
 ```
 
-#### Build a Website
+#### Build a full-stack app
 ```bash
-openclacky agent --mode=plan_only --path /projects/portfolio -m "Build a responsive personal portfolio site with Next.js: home, about, projects, and contact sections. Dark mode toggle."
-openclacky agent --mode=auto_approve --path /projects/portfolio -m "Plan approved. Implement it."
-```
-
-#### Build an Agent
-```bash
-openclacky agent --mode=plan_only --path /projects/weather-agent -m "Build a CLI agent in Python that takes a city name, calls OpenWeatherMap API, and replies with a natural language weather summary using an LLM."
-openclacky agent --mode=auto_approve --path /projects/weather-agent -m "Plan approved. Implement it."
+openclacky agent --mode=auto_approve --path /projects/myapp \
+  -m "Build a task management app with Next.js, Tailwind CSS, and PostgreSQL. Include user login, task list with CRUD, and tag-based filtering. Set up the database schema, API routes, and frontend pages."
 ```
 
 ---
 
 ## 中文
 
-Clacky AI 技能仓库，包含 `openclacky-code` 技能，用于将编码任务委托给 `openclacky` CLI 工具。
+OpenClacky AI 编程 Agent — 在非交互式终端中自主完成所有开发任务，支持全栈开发、调试、重构、测试、部署等。
 
 ### 目录结构
 
@@ -88,44 +77,33 @@ code-skills/
 
 #### 使用方式
 
-**规划阶段：**
+**开始新任务：**
 ```bash
-openclacky agent -m "开发贪吃蛇"
+openclacky agent --mode=auto_approve --path [repo dir] -m "[任务描述]"
 ```
 
-**构建（新会话）：**
-```bash
-openclacky agent --mode=auto_approve --path [repo dir] -m "/new"
-```
-
-**构建（继续会话）：**
+**继续上次会话：**
 ```bash
 openclacky agent --mode=auto_approve --path [repo dir] -c -m "[后续指令]"
 ```
 
-**交互模式（需要人工确认）：**
+**附加图片（UI 设计稿 / Bug 截图）：**
 ```bash
-openclacky agent --mode=confirm_safes --path [repo dir]
+openclacky agent --mode=auto_approve --path [repo dir] -m "[描述]" -i /path/to/screenshot.png
 ```
 
 ### 示例
 
-#### 构建游戏
+#### 修复 Bug
 ```bash
-openclacky agent --mode=plan_only --path /projects/snake-game -m "用 HTML5 Canvas 构建贪吃蛇游戏，支持方向键控制、分数显示和游戏结束画面。"
-openclacky agent --mode=auto_approve --path /projects/snake-game -m "计划已批准，开始实现。"
+openclacky agent --mode=auto_approve --path /projects/myapp -c \
+  -m "登录后跳转失败，报 404 错误，请排查并修复。"
 ```
 
-#### 构建网站
+#### 构建全栈应用
 ```bash
-openclacky agent --mode=plan_only --path /projects/portfolio -m "用 Next.js 构建响应式个人作品集网站，包含首页、关于、项目和联系方式，支持暗色模式切换。"
-openclacky agent --mode=auto_approve --path /projects/portfolio -m "计划已批准，开始实现。"
-```
-
-#### 构建 Agent
-```bash
-openclacky agent --mode=plan_only --path /projects/weather-agent -m "用 Python 构建一个 CLI Agent，输入城市名称后调用 OpenWeatherMap API，并通过 LLM 生成自然语言天气摘要。"
-openclacky agent --mode=auto_approve --path /projects/weather-agent -m "计划已批准，开始实现。"
+openclacky agent --mode=auto_approve --path /projects/myapp \
+  -m "用 Next.js、Tailwind CSS 和 PostgreSQL 构建任务管理应用，包含用户登录、任务列表 CRUD 和标签筛选，完成数据库 Schema、API 路由和前端页面。"
 ```
 
 ## License
