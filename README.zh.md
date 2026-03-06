@@ -19,7 +19,7 @@ code-skills/
 
 ### 前置条件
 
-- 安装 [openclacky](https://github.com/clacky-ai) CLI 工具
+- 安装 [openclacky](https://github.com/clacky-ai/open-clacky) CLI 工具
 
 ### 使用方式
 

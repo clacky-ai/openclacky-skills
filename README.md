@@ -19,7 +19,7 @@ code-skills/
 
 ### Prerequisites
 
-- Install the [openclacky](https://github.com/clacky-ai) CLI tool
+- Install the [openclacky](https://github.com/clacky-ai/open-clacky) CLI tool
 
 ### Usage
 
