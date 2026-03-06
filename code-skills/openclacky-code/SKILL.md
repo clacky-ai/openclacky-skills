@@ -1,50 +1,44 @@
 ---
 name: openclacky-code
-description: openclacky agent can do all things related to code
+description: OpenClacky AI coding agent — handles all development tasks autonomously in non-interactive terminals. Supports full-stack dev, debugging, refactoring, testing, deployment and more.
 metadata: {"openclaw":{"emoji":"🤖⚡🎯","requires":{"bins":["openclacky"]}}}
 ---
 
-# Openclacky
+# OpenClacky — AI Coding Agent
 
-## Commands
+OpenClacky autonomously completes development tasks in non-interactive terminals — from writing code to running tests and fixing bugs.
 
-**Plan:**
-```
-openclacky agent -m "开发贪吃蛇"
+---
+
+## Usage
+
+### Start a new task
+```bash
+openclacky agent --mode=auto_approve --path [repo dir] -m "[task description]"
 ```
 
-**Build (new session):**
-```
-openclacky agent --mode=auto_approve --path [repo dir] -m "/new"
-```
-
-**Build (continue session):**
-```
+### Continue the last session
+```bash
 openclacky agent --mode=auto_approve --path [repo dir] -c -m "[follow-up instruction]"
 ```
 
-**Interactive (when user wants to supervise):**
+### Attach an image (UI mockup / bug screenshot)
+```bash
+openclacky agent --mode=auto_approve --path [repo dir] -m "[description]" -i /path/to/screenshot.png
 ```
-openclacky agent --mode=confirm_safes --path [repo dir]
-```
+
+---
 
 ## Examples
-### 加一个ruby全栈
 
-### Build a game
-```
-openclacky agent --mode=plan_only --path /projects/snake-game -m "Build a Snake game with HTML5 Canvas, arrow key controls, score display, and game over screen."
-openclacky agent --mode=auto_approve --path /projects/snake-game -m "Plan approved. Implement it."
-```
-
-### Build a website
-```
-openclacky agent --mode=plan_only --path /projects/portfolio -m "Build a responsive personal portfolio site with Next.js: home, about, projects, and contact sections. Dark mode toggle."
-openclacky agent --mode=auto_approve --path /projects/portfolio -m "Plan approved. Implement it."
+### Fix a bug
+```bash
+openclacky agent --mode=auto_approve --path /projects/myapp -c \
+  -m "After login the redirect fails with 404. Investigate and fix it."
 ```
 
-### Build an agent
-```
-openclacky agent --mode=plan_only --path /projects/weather-agent -m "Build a CLI agent in Python that takes a city name, calls OpenWeatherMap API, and replies with a natural language weather summary using an LLM."
-openclacky agent --mode=auto_approve --path /projects/weather-agent -m "Plan approved. Implement it."
+### Build a full-stack app
+```bash
+openclacky agent --mode=auto_approve --path /projects/myapp \
+  -m "Build a task management app with Next.js, Tailwind CSS, and PostgreSQL. Include user login, task list with CRUD, and tag-based filtering. Set up the database schema, API routes, and frontend pages."
 ```
